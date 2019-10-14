@@ -6,7 +6,10 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 
-const router = require('./routes/routes.js');
+const errorHandler = require('./middleware/error.js');
+const notFound = require('./middleware/404.js');
+
+const router = require('./auth/routes/routes.js');
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -14,6 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.use(router);
+
+app.use('/*', notFound);
+app.use(errorHandler);
 
 // //TODO: REFACTOR TO INCLUDE DOTENV VARS
 // module.exports = {
