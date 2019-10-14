@@ -9,7 +9,7 @@ const morgan = require('morgan');
 const errorHandler = require('./middleware/error.js');
 const notFound = require('./middleware/404.js');
 
-const router = require('./auth/routes/routes.js');
+const router = require('./auth/routes.js/index.js');
 
 app.use(cors());
 app.use(morgan('dev'));
