@@ -1,7 +1,23 @@
 'use strict';
 
 const mongoose = require('mongoose');
-
+/**
+ * Event Model
+ * @param  {{type:String} {eventTitle
+ * @param  {true} required
+ * @param  {true}} unique
+ * @param  {{type:String}} eventDescription
+ * @param  {{type:Image}} eventSplashImage
+ * @param  {{type:String} eventOwnerId
+ * @param  {true} required
+ * @param  {true}} unique
+ * @param  {{type:String} eventGuestIds
+ * @param  {true}} unique
+ * @param  {{type:String} pictureId
+ * @param  {true} required
+ * @param  {true}} unique
+ * @param  {} }
+ */
 const events = new mongoose.Schema({
   eventTitle: {type: String, required: true, unique: true},
   eventDescription: {type: String},
